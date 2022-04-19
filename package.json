@@ -4,15 +4,7 @@
   "description": "Luxon plugin to manipulate time through business days",
   "main": "dist/index.js",
   "scripts": {
-    "lint": "eslint src",
-    "test": "jest --collect-coverage",
-    "test:watch": "NODE_ENV=test jest --watch --coverage=false",
-    "test:coverage": "NODE_ENV=test jest --collect-coverage",
-    "test:ci": "jest --collect-coverage",
-    "docs": "jsdoc2md --template README.hbs --files src/*.js > README.md",
-    "clean": "rimraf dist",
-    "build": "webpack",
-    "prepare": "npm run clean && npm run lint && npm run build"
+    "build": "rollup -c"
   },
   "repository": {
     "type": "git",
@@ -34,36 +26,11 @@
   },
   "homepage": "https://github.com/amaidah/luxon-business-days#readme",
   "peerDependencies": {
-    "luxon": "1.x.x"
+    "luxon": "^2.3.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9",
-    "@babel/preset-env": "^7.12.7",
-    "babel-loader": "^8.2.2",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "husky": "^3.1.0",
-    "jest": "^24.9.0",
-    "jsdoc-to-markdown": "^6.0.1",
-    "lint-staged": "^9.5.0",
-    "luxon": "^1.25.0",
-    "prettier": "^1.19.1",
-    "rimraf": "^3.0.2",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12",
-    "webpack-node-externals": "^1.7.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run docs && lint-staged && npm run test"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add ."
-    ]
-  },
-  "dependencies": {}
+    "luxon": "^2.3.2",
+    "rollup": "^2.70.2",
+    "rollup-plugin-terser": "^7.0.2"
+  }
 }

@@ -1,4 +1,4 @@
-import * as holidays from './holidays';
+import * as holidays from './holidays.js';
 
 export const ONE_DAY = 1;
 export const DEFAULT_BUSINESS_DAYS = [1, 2, 3, 4, 5];

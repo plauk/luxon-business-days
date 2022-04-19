@@ -1,25 +1,15 @@
 /**
  * @augments DateTime
  */
-let DateTime;
-
-/* istanbul ignore next */
-if (typeof luxon === 'object' && typeof window !== 'undefined') {
-  /* istanbul ignore next */
-  DateTime = luxon.DateTime;
-} else {
-  /* istanbul ignore next */
-  DateTime = require('luxon').DateTime;
-}
-
-import * as holidays from './holidays';
-import * as helpers from './helpers';
+import { DateTime } from '../node_modules/luxon/build/es6/luxon.js';
+import * as holidays from './holidays.js';
+import * as helpers from './helpers.js';
 
 import {
   DEFAULT_BUSINESS_DAYS,
   DEFAULT_HOLIDAY_MATCHERS,
   ONE_DAY,
-} from './defaults';
+} from './defaults.js';
 
 /**
  * All built-in holiday matchers.

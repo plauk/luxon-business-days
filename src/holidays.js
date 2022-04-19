@@ -1,16 +1,6 @@
-let DateTime;
-
-/* istanbul ignore next */
-if (typeof luxon === 'object' && typeof window !== 'undefined') {
-  /* istanbul ignore next */
-  DateTime = luxon.DateTime;
-} else {
-  /* istanbul ignore next */
-  DateTime = require('luxon').DateTime;
-}
-
-import { getEasterMonthAndDay } from './helpers';
-import { MONTH, ONE_WEEK } from './constants';
+import { DateTime } from '../node_modules/luxon/build/es6/luxon.js';
+import { getEasterMonthAndDay } from './helpers.js';
+import { MONTH, ONE_WEEK } from './constants.js';
 
 export const isNewYearsDay = function(inst) {
   const matchesMonth = inst.month === 1;
